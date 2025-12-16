@@ -1,0 +1,366 @@
+/* Global Styles */
+:root {
+    --bg-color: #0f172a;
+    --text-color: #e2e8f0;
+    --accent-color: #38bdf8;
+    --secondary-bg: #1e293b;
+    --card-bg: rgba(30, 41, 59, 0.7);
+    --border-color: #334155;
+    --heading-font: 'Outfit', sans-serif;
+    --body-font: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #7dd3fc;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--heading-font);
+    color: #f8fafc;
+    margin-bottom: 1rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Header / Hero Section */
+header {
+    padding: 6rem 0;
+    text-align: center;
+    background: radial-gradient(circle at top right, #1e40af20, transparent 40%),
+        radial-gradient(circle at bottom left, #0f172a, transparent 40%);
+    position: relative;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    background: linear-gradient(to right, #38bdf8, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+    animation: fadeInDown 1s ease-out;
+}
+
+.hero-content p.subtitle {
+    font-size: 1.5rem;
+    color: #94a3b8;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease-out 0.5s backwards;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    animation: fadeInUp 1s ease-out 0.8s backwards;
+}
+
+.contact-info div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Section Common */
+section {
+    padding: 5rem 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--accent-color);
+    border-radius: 2px;
+}
+
+/* Personal Statement */
+.personal-statement {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.125rem;
+    color: #e2e8f0;
+}
+
+/* Timeline / Work History */
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: var(--border-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+    opacity: 0;
+    /* JS reveal */
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline-item.left {
+    left: 0;
+}
+
+.timeline-item.right {
+    left: 50%;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    background-color: var(--secondary-bg);
+    border: 4px solid var(--accent-color);
+    top: 20px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item.right::after {
+    left: -10px;
+}
+
+.content-card {
+    padding: 2rem;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    position: relative;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
+    border-color: var(--accent-color);
+}
+
+.date-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background-color: rgba(56, 189, 248, 0.1);
+    color: var(--accent-color);
+    border-radius: 999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.role-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #f1f5f9;
+}
+
+.company-name {
+    color: #94a3b8;
+    margin-bottom: 1rem;
+    display: block;
+    font-weight: 500;
+}
+
+.job-details li {
+    list-style-position: outside;
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+    color: #cbd5e1;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.skill-category h3 {
+    text-align: center;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.skill-tag {
+    background-color: var(--secondary-bg);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+}
+
+.skill-tag:hover {
+    background-color: var(--accent-color);
+    color: #000;
+    transform: scale(1.05);
+}
+
+/* Achievements & Education */
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 3rem 0;
+    margin-top: 4rem;
+    border-top: 1px solid var(--border-color);
+    color: #64748b;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 4rem 0;
+    }
+
+    section {
+        padding: 3rem 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .timeline::after {
+        left: 31px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 0;
+        margin-bottom: 0;
+        /* Reduce gap between items */
+    }
+
+    /* Pull content closer for mobile */
+    .content-card {
+        padding: 1.25rem;
+    }
+
+    /* Fix bullet point alignment */
+    .job-details {
+        padding-left: 1.2rem;
+        margin-left: 0;
+    }
+
+    .timeline-item::after {
+        left: 22px;
+        /* Centered on the line */
+        top: 45px;
+        /* Aligned with the Date Badge */
+    }
+
+    .timeline-item.right {
+        left: 0%;
+    }
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
