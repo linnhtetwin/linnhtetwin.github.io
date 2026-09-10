@@ -5,7 +5,17 @@ Welcome to my personal portfolio repository. The site presents my product leader
 **Live Site:** [https://linnhtetwin.github.io](https://linnhtetwin.github.io)
 
 ## 📖 About
-This portfolio reflects a career spanning Product Management, IT Project Management, data, and engineering. It focuses on product judgment, customer discovery, cross-functional delivery, and technical fluency while intentionally omitting sensitive client and personal information.
+This portfolio reflects my journey across Product Management, IT Project Management, data, and engineering. It highlights how I apply product judgment, customer discovery, cross-functional leadership, and technical fluency to turn complex ideas into meaningful digital products. To protect the people and organizations I work with, I intentionally omit sensitive client, project, and personal information.
+
+## ☁️ Google Cloud Certification
+
+I am a **Google Cloud Certified Professional Cloud Architect**, combining validated cloud architecture expertise with product strategy and cross-functional delivery.
+
+<a href="https://www.credly.com/badges/c70264a2-4164-4aac-9993-ec7335513a4b/public_url">
+  <img src="docs/assets/images/badge.png" width="160" alt="Google Cloud Certified Professional Cloud Architect digital badge">
+</a>
+
+[Verify this credential on Credly](https://www.credly.com/badges/c70264a2-4164-4aac-9993-ec7335513a4b/public_url)
 
 ## 🛠 Tech Stack
 *   **HTML5**: Semantic structure.
